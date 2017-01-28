@@ -244,3 +244,7 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /Site/Web.Config
+/Site/web.config.DEV
+/Site/App_Data/WebsiteID2806209202.txt
+/Site/App_Data/CheckinFiles.xml
+/Site/App_Data/binding.xml

@@ -7,7 +7,7 @@
     <ProjectGuid>{C9505C9B-5B66-4269-9CE7-4533BF173C8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PX.Objects.Delta</RootNamespace>
+    <RootNamespace>PX.Objects.DA</RootNamespace>
     <AssemblyName>PX.Objects.Delta</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -55,6 +55,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>SET ACUMATICAROOT="$(SolutionDir)\Site"
+
+if not exist "$(SolutionDir)\Customization\Bin\" mkdir "$(SolutionDir)\Customization\Bin\"
+
+copy "$(TargetDir)\$(TargetFileName)" "$(SolutionDir)\Customization\Bin\PX.Objects.Delta.dll" /y
+
+if not exist "$(SolutionDir)\Release\" mkdir "$(SolutionDir)\Release\"
+
+
+if "Release"=="$(ConfigurationName)"  (
+
+SET THEDATE= date.exe +"%25T"
+ECHO %25THEDATE%25
+
+$(SolutionDir)\CstBuildProject.exe /website %25ACUMATICAROOT%25 /in "$(SolutionDir)\Customization" /out "$(SolutionDir)\Install\CustomerPriceClassOnOrder.zip" /level "1" /description "Customer Price Class On Order (%25THEDATE%25)"
+
+)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
