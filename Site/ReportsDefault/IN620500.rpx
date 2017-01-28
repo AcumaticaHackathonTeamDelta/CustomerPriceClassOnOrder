@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Name="report1">
+  <ExcelColumns>
+    <item>8</item>
+    <item>11</item>
+    <item>23</item>
+    <item>20</item>
+    <item>22</item>
+    <item>26</item>
+    <item>13</item>
+    <item>16</item>
+    <item>18</item>
+  </ExcelColumns>
+  <ExcelMode>Manual</ExcelMode>
+  <Filters>
+    <FilterExp>
+      <DataField>RowINPIHeader.PIID</DataField>
+      <Value>@PIID</Value>
+    </FilterExp>
+  </Filters>
+  <GridSize>4px, 4px</GridSize>
+  <PageSettings>
+    <Landscape>True</Landscape>
+  </PageSettings>
+  <Parameters>
+    <ReportParameter>
+      <ColumnSpan>2</ColumnSpan>
+      <Name>PIID</Name>
+      <Nullable>True</Nullable>
+      <Prompt>Reference Nbr.</Prompt>
+      <Required>True</Required>
+      <ViewName>=Report.GetFieldSchema('INPIHeader.PIID')</ViewName>
+    </ReportParameter>
+  </Parameters>
+  <Relations>
+    <ReportRelation>
+      <ChildName>RowINPIDetail</ChildName>
+      <JoinType>Inner</JoinType>
+      <Links>
+        <RelationRow>
+          <ChildField>PIID</ChildField>
+          <ParentField>PIID</ParentField>
+        </RelationRow>
+      </Links>
+      <ParentName>RowINPIHeader</ParentName>
+    </ReportRelation>
+    <ReportRelation>
+      <ChildName>RowInventoryItem</ChildName>
+      <Links>
+        <RelationRow>
+          <ChildField>InventoryID</ChildField>
+          <ParentField>InventoryID</ParentField>
+        </RelationRow>
+      </Links>
+      <ParentName>RowINPIDetail</ParentName>
+    </ReportRelation>
+  </Relations>
+  <SchemaUrl>http://px2/test/Api/Interface.asmx?WSDL</SchemaUrl>
+  <Sorting>
+    <SortExp>
+      <DataField>RowINPIDetail.LineNbr</DataField>
+    </SortExp>
+  </Sorting>
+  <StylesTemplate>TemplateReport.rpx</StylesTemplate>
+  <Tables>
+    <ReportTable Name="RowINPIHeader">
+      <Fields>
+        <ReportField Name="PIID"></ReportField>
+        <ReportField Name="Descr"></ReportField>
+        <ReportField Name="LineCntr">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="TagNumbered">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="FirstTagNbr">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="FinPeriodID"></ReportField>
+        <ReportField Name="TranPeriodID"></ReportField>
+        <ReportField Name="PIAdjAcctID"></ReportField>
+        <ReportField Name="PIAdjSubID"></ReportField>
+        <ReportField Name="SiteID"></ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="CountDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="PIAdjRefNbr"></ReportField>
+        <ReportField Name="TotalBookQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TotalPhysicalQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TotalVarQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TotalVarCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TotalNbrOfTags">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="ControlVarQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ControlVarCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="NoteID">
+          <DataType>Int64</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowINPIDetail">
+      <Fields>
+        <ReportField Name="PIID"></ReportField>
+        <ReportField Name="LineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="TagNumber">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="InventoryID"></ReportField>
+        <ReportField Name="SubItemID"></ReportField>
+        <ReportField Name="LocationID"></ReportField>
+        <ReportField Name="LotSerialNbr"></ReportField>
+        <ReportField Name="BookQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PhysicalQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="VarQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="UnitCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ExtBookCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ExtVarCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="NoteID">
+          <DataType>Int64</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="LineType"></ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowInventoryItem">
+      <Fields>
+        <ReportField Name="InventoryID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="InventoryCD"></ReportField>
+        <ReportField Name="Descr"></ReportField>
+        <ReportField Name="ItemClassID"></ReportField>
+        <ReportField Name="ItemStatus"></ReportField>
+        <ReportField Name="ItemType"></ReportField>
+        <ReportField Name="ValMethod"></ReportField>
+        <ReportField Name="TaxCategoryID"></ReportField>
+        <ReportField Name="BaseUnit"></ReportField>
+        <ReportField Name="SalesUnit"></ReportField>
+        <ReportField Name="PurchaseUnit"></ReportField>
+        <ReportField Name="Commisionable">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="ReasonCodeSubID"></ReportField>
+        <ReportField Name="ExpenseAccountID"></ReportField>
+        <ReportField Name="ExpenseSubID"></ReportField>
+        <ReportField Name="SalesAcctID"></ReportField>
+        <ReportField Name="SalesSubID"></ReportField>
+        <ReportField Name="InvtAcctID"></ReportField>
+        <ReportField Name="InvtSubID"></ReportField>
+        <ReportField Name="COGSAcctID"></ReportField>
+        <ReportField Name="COGSSubID"></ReportField>
+        <ReportField Name="DiscAcctID"></ReportField>
+        <ReportField Name="DiscSubID"></ReportField>
+        <ReportField Name="StdCstRevAcctID"></ReportField>
+        <ReportField Name="StdCstRevSubID"></ReportField>
+        <ReportField Name="StdCstVarAcctID"></ReportField>
+        <ReportField Name="StdCstVarSubID"></ReportField>
+        <ReportField Name="PPVAcctID"></ReportField>
+        <ReportField Name="PPVSubID"></ReportField>
+        <ReportField Name="POAccrualAcctID"></ReportField>
+        <ReportField Name="POAccrualSubID"></ReportField>
+        <ReportField Name="LastSiteID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="LastStdCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingStdCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingStdCostDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="StdCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="StdCostDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastBasePrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingBasePrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingBasePriceDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="BasePrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="BasePriceDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="AvgCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="MinCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="MaxCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="BaseWeight">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="BaseVolume">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="WeightUOM"></ReportField>
+        <ReportField Name="VolumeUOM"></ReportField>
+        <ReportField Name="PreferredVendorID"></ReportField>
+        <ReportField Name="DfltShipLocationID"></ReportField>
+        <ReportField Name="DfltReceiptLocationID"></ReportField>
+        <ReportField Name="DfltSiteID"></ReportField>
+        <ReportField Name="ProductWorkgroupID"></ReportField>
+        <ReportField Name="ProductManagerID"></ReportField>
+        <ReportField Name="PriceWorkgroupID"></ReportField>
+        <ReportField Name="PriceManagerID"></ReportField>
+        <ReportField Name="StkItem">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="NegQty">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="LotSerClassID"></ReportField>
+        <ReportField Name="LotSerNumSharedVal"></ReportField>
+        <ReportField Name="LotSerNumShared">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="LotSerNumExclusiveVal"></ReportField>
+        <ReportField Name="LotSerNumVal"></ReportField>
+        <ReportField Name="PostClassID"></ReportField>
+        <ReportField Name="DeferredCode"></ReportField>
+        <ReportField Name="PriceClassID"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="GroupMask">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="CycleID"></ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+  </Tables>
+  <Sections>
+    <PageHeader Name="pageHeaderSection1">
+      <ExcelMargin>
+        <bottom>1</bottom>
+      </ExcelMargin>
+      <Height>56px</Height>
+      <Items>
+        <TextBox Name="textBox11">
+          <Location>4px, 0px</Location>
+          <Size>244px, 16px</Size>
+          <StyleName>Report Name</StyleName>
+          <Value>Physical Count Sheets</Value>
+        </TextBox>
+        <TextBox Name="textBox12">
+          <Excel>
+            <column>2</column>
+            <row>2</row>
+          </Excel>
+          <Location>80px, 20px</Location>
+          <Size>168px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowCompanyBAccount.AcctName')</Value>
+        </TextBox>
+        <TextBox Name="textBox14">
+          <Excel>
+            <row>2</row>
+          </Excel>
+          <Location>4px, 20px</Location>
+          <Size>76px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Company:</Value>
+        </TextBox>
+        <TextBox Name="textBox15">
+          <Excel>
+            <column>8</column>
+          </Excel>
+          <Location>880px, 36px</Location>
+          <Size>36px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Page:</Value>
+        </TextBox>
+        <TextBox Name="textBox16">
+          <Excel>
+            <row>3</row>
+          </Excel>
+          <Location>4px, 36px</Location>
+          <Size>76px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>User:</Value>
+        </TextBox>
+        <TextBox Name="textBox17">
+          <Excel>
+            <column>9</column>
+          </Excel>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Location>936px, 36px</Location>
+          <Size>84px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=[PageOf]</Value>
+        </TextBox>
+        <TextBox Name="textBox18">
+          <Excel>
+            <column>2</column>
+            <row>3</row>
+          </Excel>
+          <Location>80px, 36px</Location>
+          <Size>168px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowAccessInfo.DisplayName')</Value>
+        </TextBox>
+        <TextBox Name="textBox19">
+          <Excel>
+            <column>9</column>
+            <row>2</row>
+          </Excel>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Location>920px, 20px</Location>
+          <Size>100px, 14px</Size>
+          <Format>g</Format>
+          <StyleName>Report Params</StyleName>
+          <Value>=Now()</Value>
+        </TextBox>
+        <TextBox Name="textBox5">
+          <Excel>
+            <column>8</column>
+            <row>2</row>
+          </Excel>
+          <Location>880px, 20px</Location>
+          <Size>36px, 14px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Date:</Value>
+        </TextBox>
+      </Items>
+    </PageHeader>
+    <Detail Name="Lines">
+      <Height>20px</Height>
+      <Items>
+        <TextBox Name="textBox211">
+          <Location>4px, 4px</Location>
+          <Size>36px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.LineNbr]</Value>
+        </TextBox>
+        <TextBox Name="textBox212">
+          <Excel>
+            <column>2</column>
+          </Excel>
+          <Location>48px, 4px</Location>
+          <Size>68px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.TagNumber]</Value>
+          <VisibleExpr>=[RowINPIHeader.TagNumbered] = 1</VisibleExpr>
+        </TextBox>
+        <TextBox Name="textBox213">
+          <Excel>
+            <column>3</column>
+          </Excel>
+          <Location>116px, 4px</Location>
+          <Size>132px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.InventoryID]</Value>
+        </TextBox>
+        <TextBox Name="textBox214">
+          <Excel>
+            <column>4</column>
+          </Excel>
+          <Location>252px, 4px</Location>
+          <Size>104px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.SubItemID]</Value>
+        </TextBox>
+        <TextBox Name="textBox215">
+          <Excel>
+            <column>5</column>
+          </Excel>
+          <Location>372px, 4px</Location>
+          <Size>124px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.LocationID]</Value>
+        </TextBox>
+        <TextBox Name="textBox216">
+          <Excel>
+            <column>6</column>
+          </Excel>
+          <Location>508px, 4px</Location>
+          <Size>144px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.LotSerialNbr]</Value>
+        </TextBox>
+        <TextBox Name="textBox217">
+          <Excel>
+            <column>7</column>
+          </Excel>
+          <Location>664px, 4px</Location>
+          <Size>64px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowInventoryItem.BaseUnit]</Value>
+        </TextBox>
+        <TextBox Name="textBox29">
+          <Excel>
+            <column>8</column>
+          </Excel>
+          <Location>740px, 4px</Location>
+          <Size>76px, 14px</Size>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINPIDetail.BookQty]</Value>
+        </TextBox>
+        <TextBox Name="textBox38">
+          <Excel>
+            <column>9</column>
+          </Excel>
+          <Location>836px, 4px</Location>
+          <Size>116px, 14px</Size>
+          <Style>
+            <BorderColor>
+              <Bottom>Black</Bottom>
+              <Left>Black</Left>
+              <Right>Black</Right>
+              <Top>Black</Top>
+            </BorderColor>
+            <BorderStyle>
+              <Bottom>Solid</Bottom>
+              <Left>Solid</Left>
+              <Right>Solid</Right>
+              <Top>Solid</Top>
+            </BorderStyle>
+            <BorderWidth>
+              <Bottom>1px</Bottom>
+              <Left>1px</Left>
+              <Right>1px</Right>
+              <Top>1px</Top>
+            </BorderWidth>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <StyleName>Normal</StyleName>
+        </TextBox>
+      </Items>
+    </Detail>
+    <PageFooter Name="pageFooterSection1">
+      <Height>5px</Height>
+      <Visible>False</Visible>
+    </PageFooter>
+    <PageHeader Name="pageHeaderSection2">
+      <Height>24px</Height>
+      <StyleName>ColumnsHeaderSection</StyleName>
+      <Items>
+        <TextBox Name="textBox6">
+          <Excel>
+            <column>3</column>
+          </Excel>
+          <Location>116px, 4px</Location>
+          <Size>136px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Ref. Nbr.</Value>
+        </TextBox>
+        <TextBox Name="textBox7">
+          <Location>4px, 4px</Location>
+          <Size>112px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Warehouse</Value>
+        </TextBox>
+        <TextBox Name="textBox8">
+          <Excel>
+            <column>4</column>
+          </Excel>
+          <Location>252px, 4px</Location>
+          <Size>136px, 14px</Size>
+          <StyleName>Heading 1</StyleName>
+          <Value>Description</Value>
+        </TextBox>
+      </Items>
+    </PageHeader>
+  </Sections>
+  <Items />
+  <Groups>
+    <Group Name="group1">
+      <Grouping>
+        <GroupExp>
+          <DataField>RowINPIHeader.PIID</DataField>
+        </GroupExp>
+        <GroupExp>
+          <DataField>RowINPIHeader.SiteID</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection1">
+          <Height>20px</Height>
+          <PrintOnEveryPage>True</PrintOnEveryPage>
+          <StyleName>GroupHighlight</StyleName>
+          <Items>
+            <TextBox Name="textBox2">
+              <Excel>
+                <column>3</column>
+              </Excel>
+              <Location>116px, 4px</Location>
+              <Size>136px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>=[RowINPIHeader.PIID]</Value>
+            </TextBox>
+            <TextBox Name="textBox21">
+              <Excel>
+                <column>5</column>
+              </Excel>
+              <Location>252px, 4px</Location>
+              <Size>412px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>=[RowINPIHeader.Descr]</Value>
+            </TextBox>
+            <TextBox Name="textBox4">
+              <Location>4px, 4px</Location>
+              <Size>112px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>=[RowINPIHeader.SiteID]</Value>
+            </TextBox>
+          </Items>
+        </Header>
+        <Header Name="groupHeaderSection2">
+          <ExcelMargin>
+            <bottom>1</bottom>
+          </ExcelMargin>
+          <Height>16px</Height>
+        </Header>
+        <Header Name="groupHeaderSection3">
+          <Height>20px</Height>
+          <StyleName>GroupL1Highlight</StyleName>
+          <Items>
+            <TextBox Name="textBox10">
+              <Excel>
+                <column>3</column>
+              </Excel>
+              <Location>116px, 4px</Location>
+              <Size>132px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Inventory ID</Value>
+            </TextBox>
+            <TextBox Name="textBox13">
+              <Excel>
+                <column>4</column>
+              </Excel>
+              <Location>252px, 4px</Location>
+              <Size>104px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Subitem</Value>
+            </TextBox>
+            <TextBox Name="textBox20">
+              <Excel>
+                <column>5</column>
+              </Excel>
+              <Location>372px, 4px</Location>
+              <Size>124px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Location</Value>
+            </TextBox>
+            <TextBox Name="textBox22">
+              <Excel>
+                <column>6</column>
+              </Excel>
+              <Location>508px, 4px</Location>
+              <Size>144px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Lot/Serial Nbr.</Value>
+            </TextBox>
+            <TextBox Name="textBox23">
+              <Excel>
+                <column>8</column>
+              </Excel>
+              <Location>740px, 4px</Location>
+              <Size>76px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Book Qty.</Value>
+            </TextBox>
+            <TextBox Name="textBox24">
+              <Excel>
+                <column>7</column>
+              </Excel>
+              <Location>664px, 4px</Location>
+              <Size>64px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>UOM</Value>
+            </TextBox>
+            <TextBox Name="textBox26">
+              <Excel>
+                <column>9</column>
+              </Excel>
+              <Location>836px, 4px</Location>
+              <Size>116px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Physical Qty.</Value>
+            </TextBox>
+            <TextBox Name="textBox27">
+              <Excel>
+                <column>2</column>
+              </Excel>
+              <Location>48px, 4px</Location>
+              <Size>68px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Tag #</Value>
+              <VisibleExpr>=[RowINPIHeader.TagNumbered] = 1</VisibleExpr>
+            </TextBox>
+            <TextBox Name="textBox9">
+              <Location>4px, 4px</Location>
+              <Size>36px, 14px</Size>
+              <StyleName>Heading 1</StyleName>
+              <Value>Line #</Value>
+            </TextBox>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection1">
+          <ExcelMargin>
+            <bottom>1</bottom>
+          </ExcelMargin>
+          <Height>16px</Height>
+          <PageBreak>After</PageBreak>
+        </Footer>
+      </Footers>
+    </Group>
+  </Groups>
+</Report>

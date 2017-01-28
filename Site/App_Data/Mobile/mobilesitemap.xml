@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<sm:SiteMap xmlns:sm="http://acumatica.com/mobilesitemap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <sm:Folder DisplayName="Expense Receipts" Icon="system://NewsPaper" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP301010.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Expense Claims" Icon="system://Folder" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP301030.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Approvals" Icon="system://Pen" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP503010.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Events" Icon="system://Date" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP404100.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Cases" Icon="system://Albums" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/CR3060PL.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Tasks" Icon="system://Note2" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP404000.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Contacts" Icon="system://UserFemale" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/CR3020PL.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Employee Time Cards" Icon="system://Clock" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP406000.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Sales Orders" Icon="system://Cash" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/SO301000.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Business Accounts" Icon="system://Culture" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/CR3030PL.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Cash Transactions" Icon="system://Credit" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/CA304000.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Equipment Time Cards" Icon="system://Clock" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/EP407000.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Include filename="includes/PM301000.xml.inc"/>
+
+    <sm:Include filename="includes/hidden/CR302000.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR303000.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR304000.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR306000.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR306010.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR306015.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR306020.xml.inc"/>
+    <sm:Include filename="includes/hidden/CR306030.xml.inc"/>
+    <sm:Include filename="includes/hidden/EP301000.xml.inc"/>
+    <sm:Include filename="includes/hidden/EP301020.xml.inc"/>
+    <sm:Include filename="includes/hidden/EP305000.xml.inc"/>
+    <sm:Include filename="includes/hidden/EP308000.xml.inc"/>
+    <sm:Include filename="includes/hidden/PM302000.xml.inc"/>
+
+    <sm:Folder DisplayName="Purchase Orders" Icon="system://Cart" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/PO301000.xml.inc"/>
+    </sm:Folder>
+
+    <sm:Folder DisplayName="Purchase Receipts" Icon="system://Box1" IsDefaultFavorite="true" Type="HubFolder">
+        <sm:Include filename="includes/PO302000.xml.inc"/>
+    </sm:Folder>
+    
+    <sm:Include filename="includes/RQ301000.xml.inc"/>
+    <sm:Include filename="includes/RQ302000.xml.inc"/>
+
+</sm:SiteMap>

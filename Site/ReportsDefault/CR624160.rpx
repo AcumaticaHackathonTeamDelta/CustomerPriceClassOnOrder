@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Name="report1">
+  <Relations>
+    <ReportRelation>
+      <ChildName>CROpportunity</ChildName>
+      <JoinType>Cross</JoinType>
+      <ParentName>CROpportunityProbability</ParentName>
+    </ReportRelation>
+    <ReportRelation>
+      <ChildName>CREmployee</ChildName>
+      <Links>
+        <RelationRow>
+          <ChildField>UserID</ChildField>
+          <ParentField>OwnerID</ParentField>
+        </RelationRow>
+      </Links>
+      <ParentName>CROpportunity</ParentName>
+    </ReportRelation>
+  </Relations>
+  <SchemaUrl>http://localhost/loc520</SchemaUrl>
+  <StylesTemplate>TemplateReport.rpx</StylesTemplate>
+  <Tables>
+    <ReportTable Name="CROpportunityProbability">
+      <Fields>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByID_Creator_username"></ReportField>
+        <ReportField Name="CreatedByID_description"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByID_description"></ReportField>
+        <ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="Probability">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="StageCode"></ReportField>
+        <ReportField Name="tstamp"></ReportField>
+      </Fields>
+      <FullName>PX.Objects.CR.CROpportunityProbability</FullName>
+    </ReportTable>
+    <ReportTable Name="CROpportunity">
+      <Fields>
+        <ReportField Name="Amount">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ARRefNbr"></ReportField>
+        <ReportField Name="AssignDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="BAccountID"></ReportField>
+        <ReportField Name="BAccountID_BAccount_acctName"></ReportField>
+        <ReportField Name="BAccountID_description"></ReportField>
+        <ReportField Name="CampaignSourceID"></ReportField>
+        <ReportField Name="CampaignSourceID_CRCampaign_campaignName"></ReportField>
+        <ReportField Name="CampaignSourceID_description"></ReportField>
+        <ReportField Name="ClassID"></ReportField>
+        <ReportField Name="CloseDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="ClosingDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="COMPREV_Attributes"></ReportField>
+        <ReportField Name="COMPSIZE_Attributes"></ReportField>
+        <ReportField Name="ContactID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="ContactID_Contact_displayName"></ReportField>
+        <ReportField Name="ContactID_description"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByID_Creator_username"></ReportField>
+        <ReportField Name="CreatedByID_description"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="CROpportunityClassID"></ReportField>
+        <ReportField Name="CROpportunityClassID_CROpportunityClass_description"></ReportField>
+        <ReportField Name="CROpportunityClassID_description"></ReportField>
+        <ReportField Name="CuryAmount">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryDiscTot">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryID"></ReportField>
+        <ReportField Name="CuryInfoID">
+          <DataType>Int64</DataType>
+        </ReportField>
+        <ReportField Name="CuryLineTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryProductsAmount">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryRate">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryTaxTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryVatExemptTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryVatTaxableTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CuryViewState">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="CuryWgtAmount">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="Description"></ReportField>
+        <ReportField Name="DiscTot">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="EntityType"></ReportField>
+        <ReportField Name="ID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="IsTaxValid">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="LastActivity">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByID_description"></ReportField>
+        <ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LineTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="LocationID"></ReportField>
+        <ReportField Name="LocationID_description"></ReportField>
+        <ReportField Name="LocationID_Location_descr"></ReportField>
+        <ReportField Name="MajorStatus">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="ManualTotalEntry">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="NoteActivity"></ReportField>
+        <ReportField Name="NoteFiles"></ReportField>
+        <ReportField Name="NoteID">
+          <DataType>Int64</DataType>
+        </ReportField>
+        <ReportField Name="NoteImages"></ReportField>
+        <ReportField Name="NoteText"></ReportField>
+        <ReportField Name="OpportunityID"></ReportField>
+        <ReportField Name="OpportunityName"></ReportField>
+        <ReportField Name="OpportunityNumber">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="OrderNbr"></ReportField>
+        <ReportField Name="OrderType"></ReportField>
+        <ReportField Name="OwnerID"></ReportField>
+        <ReportField Name="OwnerID_description"></ReportField>
+        <ReportField Name="OwnerID_EPEmployee_acctName"></ReportField>
+        <ReportField Name="ParentBAccountID"></ReportField>
+        <ReportField Name="ParentBAccountID_BAccount_acctName"></ReportField>
+        <ReportField Name="ParentBAccountID_description"></ReportField>
+        <ReportField Name="ProductsAmount">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ProjectID"></ReportField>
+        <ReportField Name="ProjectID_description"></ReportField>
+        <ReportField Name="ProjectID_PMProject_description"></ReportField>
+        <ReportField Name="Resolution"></ReportField>
+        <ReportField Name="Selected">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="StageID"></ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="TaxTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TaxZoneID"></ReportField>
+        <ReportField Name="TaxZoneID_description"></ReportField>
+        <ReportField Name="TaxZoneID_TaxZone_descr"></ReportField>
+        <ReportField Name="tstamp"></ReportField>
+        <ReportField Name="VatExemptTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="VatTaxableTotal">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="WorkgroupID"></ReportField>
+        <ReportField Name="WorkgroupID_description"></ReportField>
+        <ReportField Name="WorkgroupID_EPCompanyTree_description"></ReportField>
+      </Fields>
+      <FullName>PX.Objects.CR.CROpportunity</FullName>
+    </ReportTable>
+    <ReportTable Name="CREmployee">
+      <Fields>
+        <ReportField Name="AcctCD"></ReportField>
+        <ReportField Name="AcctCD_description"></ReportField>
+        <ReportField Name="AcctCD_EPEmployee_acctName"></ReportField>
+        <ReportField Name="AcctName"></ReportField>
+        <ReportField Name="AcctReferenceNbr"></ReportField>
+        <ReportField Name="ADNLEVEL_Attributes"></ReportField>
+        <ReportField Name="AGRDATE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="AGREESIGN_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="ANNSALES_Attributes"></ReportField>
+        <ReportField Name="ARREF_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="BAccountID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="CasesCount">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="CASESTUDY_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="CERTSTATUS_Attributes"></ReportField>
+        <ReportField Name="ClassID"></ReportField>
+        <ReportField Name="ClassID_CRCustomerClass_description"></ReportField>
+        <ReportField Name="ClassID_description"></ReportField>
+        <ReportField Name="ConsolidateToParent">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="ConsolidatingBAccountID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="Count">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByID_Creator_username"></ReportField>
+        <ReportField Name="CreatedByID_description"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="CUSCASESTU_Attributes"></ReportField>
+        <ReportField Name="CUSPR_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="CUSTSINCE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="DefAddressID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="DefContactID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="DefLocationID"></ReportField>
+        <ReportField Name="DefLocationID_description"></ReportField>
+        <ReportField Name="DefLocationID_Location_descr"></ReportField>
+        <ReportField Name="DEMOABIL_Attributes"></ReportField>
+        <ReportField Name="DepartmentID"></ReportField>
+        <ReportField Name="DepartmentID_description"></ReportField>
+        <ReportField Name="DepartmentID_EPDepartment_description"></ReportField>
+        <ReportField Name="EntityType"></ReportField>
+        <ReportField Name="EVENTREF_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="EXECSPON_Attributes"></ReportField>
+        <ReportField Name="FIRSTDEALD_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="FIRSTGLIVE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="FUNCTSAT_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="GEO_Attributes"></ReportField>
+        <ReportField Name="GOLIVE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="ID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="IMPLEMSAT_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="INDUSTRY_Attributes"></ReportField>
+        <ReportField Name="INTUSE_Attributes"></ReportField>
+        <ReportField Name="IsCustomerOrCombined">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="ISPUBLIC_Attributes"></ReportField>
+        <ReportField Name="LastActivity">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByID_description"></ReportField>
+        <ReportField Name="LastModifiedByID_Modifier_username"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LASTSURV_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LEADSRC_Attributes"></ReportField>
+        <ReportField Name="MARGIN_Attributes"></ReportField>
+        <ReportField Name="MARGINLEVL_Attributes"></ReportField>
+        <ReportField Name="MICROMARKT_Attributes"></ReportField>
+        <ReportField Name="MLCLUB_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="MSADATESIG_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="NEEDISV_Attributes"></ReportField>
+        <ReportField Name="NEMP_Attributes"></ReportField>
+        <ReportField Name="NoteActivity"></ReportField>
+        <ReportField Name="NoteFiles"></ReportField>
+        <ReportField Name="NoteID">
+          <DataType>Object</DataType>
+        </ReportField>
+        <ReportField Name="NoteImages"></ReportField>
+        <ReportField Name="NoteText"></ReportField>
+        <ReportField Name="NPSQ214_Attributes"></ReportField>
+        <ReportField Name="NPSQ314_Attributes"></ReportField>
+        <ReportField Name="NUMCUST_Attributes"></ReportField>
+        <ReportField Name="NUMOFFICE_Attributes"></ReportField>
+        <ReportField Name="ONHOLDDATE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="OwnerID"></ReportField>
+        <ReportField Name="OwnerID_description"></ReportField>
+        <ReportField Name="OwnerID_EPEmployee_acctName"></ReportField>
+        <ReportField Name="ParentBAccountID"></ReportField>
+        <ReportField Name="ParentBAccountID_BAccountR_acctName"></ReportField>
+        <ReportField Name="ParentBAccountID_description"></ReportField>
+        <ReportField Name="PARTNERWEB_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="PARTREVIEW_Attributes"></ReportField>
+        <ReportField Name="PARTTYPE_Attributes"></ReportField>
+        <ReportField Name="PHONEREF_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="PRESSREL_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="PreviewHtml"></ReportField>
+        <ReportField Name="PRIORSOL_Attributes"></ReportField>
+        <ReportField Name="PRREF_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="PUBPRIVNOT_Attributes"></ReportField>
+        <ReportField Name="RAMPSTAGE_Attributes"></ReportField>
+        <ReportField Name="RECDATE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="RECRUITER_Attributes"></ReportField>
+        <ReportField Name="REFCUST_Attributes"></ReportField>
+        <ReportField Name="REFERENCE_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="REFQUOTE_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="REGION_Attributes"></ReportField>
+        <ReportField Name="RESOURCES_Attributes"></ReportField>
+        <ReportField Name="REVENUES_Attributes"></ReportField>
+        <ReportField Name="Selected">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="SELLINGVAR_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="SELLPARTDI_Attributes"></ReportField>
+        <ReportField Name="SIC_Attributes"></ReportField>
+        <ReportField Name="SOLEVAL_Attributes"></ReportField>
+        <ReportField Name="SPRING2013_Attributes"></ReportField>
+        <ReportField Name="SPRING2014_Attributes"></ReportField>
+        <ReportField Name="SRVOFFERED_Attributes"></ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="STATUS_Attributes"></ReportField>
+        <ReportField Name="SUMMIT2012_Attributes"></ReportField>
+        <ReportField Name="SUMMIT2013_Attributes"></ReportField>
+        <ReportField Name="SupervisorID"></ReportField>
+        <ReportField Name="SupervisorID_description"></ReportField>
+        <ReportField Name="SupervisorID_EPEmployee_acctName"></ReportField>
+        <ReportField Name="SUPPORTSAT_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="TAM_Attributes"></ReportField>
+        <ReportField Name="TaxRegistrationID"></ReportField>
+        <ReportField Name="TaxZoneID"></ReportField>
+        <ReportField Name="TaxZoneID_description"></ReportField>
+        <ReportField Name="TaxZoneID_TaxZone_descr"></ReportField>
+        <ReportField Name="TERMINDATE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="TIMETOREV_Attributes"></ReportField>
+        <ReportField Name="tstamp"></ReportField>
+        <ReportField Name="Type"></ReportField>
+        <ReportField Name="UserID">
+          <DataType>Object</DataType>
+        </ReportField>
+        <ReportField Name="USERS_Attributes"></ReportField>
+        <ReportField Name="VARTYPE_Attributes"></ReportField>
+        <ReportField Name="VIDCASESTU_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="VIDTESTIMO_Attributes">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="ViewInCrm">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="WEBPOFILE_Attributes">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="WorkgroupID"></ReportField>
+        <ReportField Name="WorkgroupID_description"></ReportField>
+        <ReportField Name="WorkgroupID_EPCompanyTree_description"></ReportField>
+        <ReportField Name="YRINBUS_Attributes"></ReportField>
+      </Fields>
+      <FullName>PX.Objects.CR.CREmployee</FullName>
+    </ReportTable>
+  </Tables>
+  <TabularFreeze>170px</TabularFreeze>
+  <TabularReport>True</TabularReport>
+  <Width>6.24339cm</Width>
+  <Sections>
+    <PageHeader Name="pageHeaderSection1">
+      <Height>1.46984cm</Height>
+      <Items>
+        <TextBox Name="textBox5">
+          <Location>8px, 0px</Location>
+          <Size>64px, 16px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>Company:</Value>
+        </TextBox>
+        <TextBox Name="textBox6">
+          <Location>8px, 16px</Location>
+          <Size>64px, 16px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>User:</Value>
+        </TextBox>
+        <TextBox Name="textBox7">
+          <Location>72px, 0px</Location>
+          <Size>176px, 16px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('CompanyBAccount.AcctName')</Value>
+        </TextBox>
+        <TextBox Name="textBox8">
+          <Location>72px, 16px</Location>
+          <Size>176px, 16px</Size>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('AccessInfo.DisplayName')</Value>
+        </TextBox>
+        <TextBox Name="textBox9">
+          <Location>8px, 32px</Location>
+          <Size>312px, 16px</Size>
+          <StyleName>Report Name</StyleName>
+          <Value>Opportunity Stages Statistics By Owner</Value>
+        </TextBox>
+      </Items>
+    </PageHeader>
+    <Detail Name="detailSection1">
+      <Height>0cm</Height>
+    </Detail>
+    <PageFooter Name="pageFooterSection1">
+      <Height>0cm</Height>
+    </PageFooter>
+  </Sections>
+  <Items />
+  <Groups>
+    <Group Name="stage">
+      <Description>Stage</Description>
+      <Grouping>
+        <GroupExp>
+          <DataField>CROpportunityProbability.StageCode</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection1">
+          <Height>0.42328cm</Height>
+          <Items>
+            <TextBox Name="textBox1">
+              <Location>176px, 0px</Location>
+              <Size>56px, 16px</Size>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <StyleName>Heading 1</StyleName>
+              <Value>=[CROpportunityProbability.StageCode]</Value>
+            </TextBox>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection1">
+          <Height>0.42328cm</Height>
+          <Items>
+            <Panel Name="panel1">
+              <Location>176px, 0px</Location>
+              <Size>56px, 16px</Size>
+              <Style>
+                <BorderColor>
+                  <Top>Black</Top>
+                </BorderColor>
+                <BorderStyle>
+                  <Top>Solid</Top>
+                </BorderStyle>
+                <BorderWidth>
+                  <Top>1px</Top>
+                </BorderWidth>
+                <Color>Black</Color>
+              </Style>
+              <Items>
+                <TextBox Name="textBox4">
+                  <Location>0px, 0px</Location>
+                  <ProcessOrder>Always</ProcessOrder>
+                  <Size>56px, 16px</Size>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                  <StyleName>Report Params</StyleName>
+                  <Value>=sum(iif([CROpportunity.StageID]=[CROpportunityProbability.StageCode], 1, 0) )</Value>
+                </TextBox>
+              </Items>
+            </Panel>
+          </Items>
+        </Footer>
+      </Footers>
+    </Group>
+    <Group Name="owner">
+      <Description>owner</Description>
+      <Grouping>
+        <GroupExp>
+          <DataField>CREmployee.AcctName</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection2">
+          <Height>0.42328cm</Height>
+          <ProcessOrder>Always</ProcessOrder>
+          <Items>
+            <TextBox Name="textBox2">
+              <Location>8px, 0px</Location>
+              <Size>160px, 16px</Size>
+              <StyleName>Report Params</StyleName>
+              <Value>=IsNull([CREmployee.AcctName],'Unassigned')</Value>
+            </TextBox>
+            <TextBox Name="textBox3">
+              <Location>176px, 0px</Location>
+              <ProcessOrder>Always</ProcessOrder>
+              <Size>56px, 16px</Size>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <StyleName>Report Params</StyleName>
+              <Value>=sum(iif([CROpportunity.StageID]=[CROpportunityProbability.StageCode], 1, 0) )</Value>
+            </TextBox>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection2">
+          <Height>0cm</Height>
+        </Footer>
+      </Footers>
+    </Group>
+  </Groups>
+</Report>

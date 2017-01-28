@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Name="report1">
+  <DrawGrid>False</DrawGrid>
+  <GridSize>4px, 4px</GridSize>
+  <Tables>
+    <ReportTable Name="RowCRCampaign">
+      <Fields>
+        <ReportField Name="CampaignID"></ReportField>
+        <ReportField Name="CampaignName"></ReportField>
+        <ReportField Name="CampaignType"></ReportField>
+        <ReportField Name="Status"></ReportField>
+        <ReportField Name="IsActive">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="DefaultMemberStatus"></ReportField>
+        <ReportField Name="StartDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="EndDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="ExpectedRevenue">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PlannedBudget">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ActualCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ExpectedResponse">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="MailsSent">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="LeadsGenerated">
+          <DataType>Object</DataType>
+        </ReportField>
+        <ReportField Name="LeadsConverted">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="Contacts">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="Responses">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="Opportunities">
+          <DataType>Object</DataType>
+        </ReportField>
+        <ReportField Name="ClosedOpportunities">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="OpportunitiesValue">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="ClosedOpportunitiesValue">
+          <DataType>Object</DataType>
+        </ReportField>
+        <ReportField Name="PromoCodeID"></ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+  </Tables>
+  <SchemaUrl>http://localhost:4444/Site/Api/Interface.asmx?WSDL</SchemaUrl>
+	<StylesTemplate>TemplateReport.rpx</StylesTemplate>
+  <PageSettings>
+    <Landscape>True</Landscape>
+  </PageSettings>
+  <Sections>
+    <PageHeader Name="pageHeaderSection1">
+      <Height>2.01058cm</Height>
+      <Items>
+        <Panel Name="panel1">
+          <Location>4px, 48px</Location>
+          <Style>
+            <BorderColor>
+              <Top>Black</Top>
+              <Bottom>Black</Bottom>
+            </BorderColor>
+            <BorderStyle>
+              <Bottom>Solid</Bottom>
+            </BorderStyle>
+            <BorderWidth>
+              <Top>1px</Top>
+              <Bottom>1px</Bottom>
+            </BorderWidth>
+          </Style>
+          <Size>1008px, 28px</Size>
+          <Items>
+            <TextBox Name="textBox7">
+              <Location>840px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>Planned Bugdet</Value>
+              <Size>76px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox6">
+              <Location>472px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>Num Sent</Value>
+              <Size>88px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox5">
+              <Location>564px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>Total Responses</Value>
+              <Size>88px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox13">
+              <Location>656px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>Num Won</Value>
+              <Size>88px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox4">
+              <Location>388px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Start Date</Value>
+              <Size>76px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox22">
+              <Location>920px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>Actual Cost</Value>
+              <Size>88px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox32">
+              <Location>748px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>Total Value Won</Value>
+              <Size>88px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox31">
+              <Location>288px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Status</Value>
+              <Size>92px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox28">
+              <Location>200px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Campaign Type</Value>
+              <Size>84px, 28px</Size>
+            </TextBox>
+            <TextBox Name="textBox2">
+              <Location>0px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Campaign Name</Value>
+              <Size>84px, 28px</Size>
+            </TextBox>
+          </Items>
+        </Panel>
+        <TextBox Name="textBox9">
+          <Location>4px, 28px</Location>
+          <StyleName>Report Name</StyleName>
+          <Value>CR Campaign Statistics</Value>
+          <Size>206px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox11">
+          <Location>8px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>Company:</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox12">
+          <Location>90px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowCompanyBAccount.AcctName')</Value>
+          <Size>168px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox14">
+          <Location>880px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>Date:</Value>
+          <Size>36px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox15">
+          <Location>880px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>Page:</Value>
+          <Size>36px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox16">
+          <Location>8px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>User:</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox17">
+          <Location>916px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[PageOf]</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox18">
+          <Location>90px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowAccessInfo.DisplayName')</Value>
+          <Size>168px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox19">
+          <Location>916px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Format>g</Format>
+          <Value>=Now()</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <Line Name="line1">
+          <Location>4px, 43px</Location>
+          <Size>1008px, 1px</Size>
+        </Line>
+      </Items>
+    </PageHeader>
+    <Detail Name="detailSection1">
+      <Height>14px</Height>
+      <Items>
+        <TextBox Name="textBox21">
+          <Location>844px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowCRCampaign.PlannedBudget]</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox20">
+          <Location>660px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowCRCampaign.ClosedOpportunities]</Value>
+          <Size>88px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox10">
+          <Location>568px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowCRCampaign.Responses]</Value>
+          <Size>88px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox34">
+          <Location>476px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowCRCampaign.MailsSent]</Value>
+          <Size>88px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox3">
+          <Location>392px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowCRCampaign.StartDate]</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox1">
+          <Location>924px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowCRCampaign.ActualCost]</Value>
+          <Size>88px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox8">
+          <Location>4px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowCRCampaign.CampaignName]</Value>
+          <Size>196px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox30">
+          <Location>292px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowCRCampaign.Status]</Value>
+          <Size>96px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox26">
+          <Location>752px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowCRCampaign.ClosedOpportunitiesValue]</Value>
+          <Size>88px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox23">
+          <Location>204px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowCRCampaign.CampaignType]</Value>
+          <Size>84px, 14px</Size>
+        </TextBox>
+      </Items>
+    </Detail>
+    <PageFooter Name="pageFooterSection1">
+      <Height>0.21164cm</Height>
+      <Visible>False</Visible>
+    </PageFooter>
+    <ReportFooter Name="reportFooterSection1">
+      <Height>0.74074cm</Height>
+    </ReportFooter>
+  </Sections>
+</Report>

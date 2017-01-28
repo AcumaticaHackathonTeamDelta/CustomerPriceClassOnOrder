@@ -1,0 +1,1219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Name="report1">
+  <DrawGrid>False</DrawGrid>
+  <Filters>
+    <FilterExp>
+      <Condition>LessOrEqual</Condition>
+      <DataField>RowINTran.FinPeriodID</DataField>
+      <Value>@EndPeriod</Value>
+    </FilterExp>
+    <FilterExp>
+      <DataField>RowINTran.InventoryID</DataField>
+      <Operator>Or</Operator>
+      <OpenBraces>1</OpenBraces>
+      <Value>@Inventory_ID</Value>
+    </FilterExp>
+    <FilterExp>
+      <Condition>IsNull</Condition>
+      <DataField>@Inventory_ID</DataField>
+      <CloseBraces>1</CloseBraces>
+    </FilterExp>
+    <FilterExp>
+      <DataField>RowINTranSplit.LotSerialNbr</DataField>
+      <Operator>Or</Operator>
+      <OpenBraces>1</OpenBraces>
+      <Value>@SerialNbr</Value>
+    </FilterExp>
+    <FilterExp>
+      <Condition>IsNull</Condition>
+      <DataField>@SerialNbr</DataField>
+      <CloseBraces>1</CloseBraces>
+    </FilterExp>
+    <FilterExp>
+      <DataField>RowINLotSerClass.LotSerTrack</DataField>
+      <Operator>Or</Operator>
+      <OpenBraces>1</OpenBraces>
+      <Value>L</Value>
+    </FilterExp>
+    <FilterExp>
+      <DataField>RowINLotSerClass.LotSerTrack</DataField>
+      <CloseBraces>1</CloseBraces>
+      <Value>S</Value>
+    </FilterExp>
+    <FilterExp>
+      <DataField>RowINTran.Released</DataField>
+      <Value>True</Value>
+    </FilterExp>
+  </Filters>
+  <GridSize>4px, 4px</GridSize>
+  <Tables>
+    <ReportTable Name="RowINTran">
+      <Fields>
+        <ReportField Name="DocType"></ReportField>
+        <ReportField Name="TranType"></ReportField>
+        <ReportField Name="RefNbr"></ReportField>
+        <ReportField Name="LineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="TranDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="InventoryID"></ReportField>
+        <ReportField Name="SubItemID"></ReportField>
+        <ReportField Name="SiteID"></ReportField>
+        <ReportField Name="LocationID"></ReportField>
+        <ReportField Name="OrigTranType"></ReportField>
+        <ReportField Name="OrigRefNbr"></ReportField>
+        <ReportField Name="OrigLineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="AcctID"></ReportField>
+        <ReportField Name="SubID"></ReportField>
+        <ReportField Name="InvtAcctID"></ReportField>
+        <ReportField Name="InvtSubID"></ReportField>
+        <ReportField Name="COGSAcctID"></ReportField>
+        <ReportField Name="COGSSubID"></ReportField>
+        <ReportField Name="ToSiteID"></ReportField>
+        <ReportField Name="ToLocationID"></ReportField>
+        <ReportField Name="LotSerialNbr"></ReportField>
+        <ReportField Name="ExpireDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="InvtMult">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="UOM"></ReportField>
+        <ReportField Name="UnitMultDiv"></ReportField>
+        <ReportField Name="UnitRate">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="Qty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="Released">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="FinPeriodID"></ReportField>
+        <ReportField Name="TranPeriodID"></ReportField>
+        <ReportField Name="UnitPrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TranAmt">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="UnitCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TranCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TranDesc"></ReportField>
+        <ReportField Name="ReasonCode"></ReportField>
+        <ReportField Name="BaseQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CostedQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="OrigTranCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="OrigTranAmt">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="ARDocType"></ReportField>
+        <ReportField Name="ARRefNbr"></ReportField>
+        <ReportField Name="ARLineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="SalesMult">
+          <DataType>Int16</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowINTranSplit">
+      <Fields>
+        <ReportField Name="DocType"></ReportField>
+        <ReportField Name="TranType"></ReportField>
+        <ReportField Name="RefNbr"></ReportField>
+        <ReportField Name="LineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="SplitLineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="TranDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="InventoryID"></ReportField>
+        <ReportField Name="SubItemID"></ReportField>
+        <ReportField Name="CostSubItemID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="CostSiteID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="SiteID"></ReportField>
+        <ReportField Name="LocationID"></ReportField>
+        <ReportField Name="LotSerialNbr"></ReportField>
+        <ReportField Name="LotSerClassID"></ReportField>
+        <ReportField Name="AssignedNbr"></ReportField>
+        <ReportField Name="ExpireDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="InvtMult">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="Released">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="UOM"></ReportField>
+        <ReportField Name="UnitRate">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="UnitMultDiv"></ReportField>
+        <ReportField Name="Qty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="BaseQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowINTranSplitCostDetail">
+      <Fields>
+        <ReportField Name="DocType"></ReportField>
+        <ReportField Name="TranType"></ReportField>
+        <ReportField Name="RefNbr"></ReportField>
+        <ReportField Name="LineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="SplitLineNbr">
+          <DataType>Int16</DataType>
+        </ReportField>
+        <ReportField Name="TranDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="BaseQty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="TranCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="Qty">
+          <DataType>Decimal</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowInventoryItem">
+      <Fields>
+        <ReportField Name="InventoryID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="InventoryCD"></ReportField>
+        <ReportField Name="Descr"></ReportField>
+        <ReportField Name="ItemClassID"></ReportField>
+        <ReportField Name="ItemStatus"></ReportField>
+        <ReportField Name="ItemType"></ReportField>
+        <ReportField Name="ValMethod"></ReportField>
+        <ReportField Name="TaxCategoryID"></ReportField>
+        <ReportField Name="BaseUnit"></ReportField>
+        <ReportField Name="SalesUnit"></ReportField>
+        <ReportField Name="PurchaseUnit"></ReportField>
+        <ReportField Name="Commisionable">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="ReasonCodeSubID"></ReportField>
+        <ReportField Name="ExpenseAccountID"></ReportField>
+        <ReportField Name="ExpenseSubID"></ReportField>
+        <ReportField Name="SalesAcctID"></ReportField>
+        <ReportField Name="SalesSubID"></ReportField>
+        <ReportField Name="InvtAcctID"></ReportField>
+        <ReportField Name="InvtSubID"></ReportField>
+        <ReportField Name="COGSAcctID"></ReportField>
+        <ReportField Name="COGSSubID"></ReportField>
+        <ReportField Name="DiscAcctID"></ReportField>
+        <ReportField Name="DiscSubID"></ReportField>
+        <ReportField Name="StdCstRevAcctID"></ReportField>
+        <ReportField Name="StdCstRevSubID"></ReportField>
+        <ReportField Name="StdCstVarAcctID"></ReportField>
+        <ReportField Name="StdCstVarSubID"></ReportField>
+        <ReportField Name="PPVAcctID"></ReportField>
+        <ReportField Name="PPVSubID"></ReportField>
+        <ReportField Name="LastSiteID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="LastStdCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingStdCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingStdCostDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="StdCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="StdCostDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastBasePrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingBasePrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="PendingBasePriceDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="BasePrice">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="BasePriceDate">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="AvgCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="MinCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="MaxCost">
+          <DataType>Decimal</DataType>
+        </ReportField>
+        <ReportField Name="DfltShipLocationID"></ReportField>
+        <ReportField Name="DfltReceiptLocationID"></ReportField>
+        <ReportField Name="DfltSiteID"></ReportField>
+        <ReportField Name="ProductWorkgroupID"></ReportField>
+        <ReportField Name="ProductManagerID"></ReportField>
+        <ReportField Name="PriceWorkgroupID"></ReportField>
+        <ReportField Name="PriceManagerID"></ReportField>
+        <ReportField Name="StkItem">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="NegQty">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="LotSerClassID"></ReportField>
+        <ReportField Name="LotSerNumVal"></ReportField>
+        <ReportField Name="PostClassID"></ReportField>
+        <ReportField Name="DeferredCode"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="GroupMask">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowINLotSerClass">
+      <Fields>
+        <ReportField Name="LotSerClassID"></ReportField>
+        <ReportField Name="Descr"></ReportField>
+        <ReportField Name="LotSerTrack"></ReportField>
+        <ReportField Name="LotSerAssign"></ReportField>
+        <ReportField Name="LotSerIssueMethod"></ReportField>
+        <ReportField Name="LotSerNumVal"></ReportField>
+        <ReportField Name="LotSerNumShared">
+          <DataType>Boolean</DataType>
+        </ReportField>
+        <ReportField Name="LotSerFormatStr"></ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+    <ReportTable Name="RowINSite">
+      <Fields>
+        <ReportField Name="SiteID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="SiteCD"></ReportField>
+        <ReportField Name="Descr"></ReportField>
+        <ReportField Name="ReasonCodeSubID"></ReportField>
+        <ReportField Name="SalesAcctID"></ReportField>
+        <ReportField Name="SalesSubID"></ReportField>
+        <ReportField Name="InvtAcctID"></ReportField>
+        <ReportField Name="InvtSubID"></ReportField>
+        <ReportField Name="COGSAcctID"></ReportField>
+        <ReportField Name="COGSSubID"></ReportField>
+        <ReportField Name="DiscAcctID"></ReportField>
+        <ReportField Name="DiscSubID"></ReportField>
+        <ReportField Name="StdCstRevAcctID"></ReportField>
+        <ReportField Name="StdCstRevSubID"></ReportField>
+        <ReportField Name="StdCstVarAcctID"></ReportField>
+        <ReportField Name="StdCstVarSubID"></ReportField>
+        <ReportField Name="PPVAcctID"></ReportField>
+        <ReportField Name="PPVSubID"></ReportField>
+        <ReportField Name="FreightAcctID"></ReportField>
+        <ReportField Name="FreightSubID"></ReportField>
+        <ReportField Name="MiscAcctID"></ReportField>
+        <ReportField Name="MiscSubID"></ReportField>
+        <ReportField Name="POAccrualAcctID"></ReportField>
+        <ReportField Name="POAccrualSubID"></ReportField>
+        <ReportField Name="CompanyLocationID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="ReceiptLocationID"></ReportField>
+        <ReportField Name="ShipLocationID"></ReportField>
+        <ReportField Name="ReturnLocationID"></ReportField>
+        <ReportField Name="LocationValid"></ReportField>
+        <ReportField Name="AddressID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="ContactID">
+          <DataType>Int32</DataType>
+        </ReportField>
+        <ReportField Name="CreatedByID"></ReportField>
+        <ReportField Name="CreatedByScreenID"></ReportField>
+        <ReportField Name="CreatedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="LastModifiedByID"></ReportField>
+        <ReportField Name="LastModifiedByScreenID"></ReportField>
+        <ReportField Name="LastModifiedDateTime">
+          <DataType>DateTime</DataType>
+        </ReportField>
+        <ReportField Name="tstamp">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="GroupMask">
+          <DataType>Byte</DataType>
+        </ReportField>
+        <ReportField Name="ReasonCodeSubID_Sub_description"></ReportField>
+        <ReportField Name="ReasonCodeSubID_description"></ReportField>
+        <ReportField Name="SalesAcctID_Account_description"></ReportField>
+        <ReportField Name="SalesAcctID_description"></ReportField>
+        <ReportField Name="SalesSubID_Sub_description"></ReportField>
+        <ReportField Name="SalesSubID_description"></ReportField>
+        <ReportField Name="InvtAcctID_Account_description"></ReportField>
+        <ReportField Name="InvtAcctID_description"></ReportField>
+        <ReportField Name="InvtSubID_Sub_description"></ReportField>
+        <ReportField Name="InvtSubID_description"></ReportField>
+        <ReportField Name="COGSAcctID_Account_description"></ReportField>
+        <ReportField Name="COGSAcctID_description"></ReportField>
+        <ReportField Name="COGSSubID_Sub_description"></ReportField>
+        <ReportField Name="COGSSubID_description"></ReportField>
+        <ReportField Name="DiscAcctID_Account_description"></ReportField>
+        <ReportField Name="DiscAcctID_description"></ReportField>
+        <ReportField Name="DiscSubID_Sub_description"></ReportField>
+        <ReportField Name="DiscSubID_description"></ReportField>
+        <ReportField Name="StdCstRevAcctID_Account_description"></ReportField>
+        <ReportField Name="StdCstRevAcctID_description"></ReportField>
+        <ReportField Name="StdCstRevSubID_Sub_description"></ReportField>
+        <ReportField Name="StdCstRevSubID_description"></ReportField>
+        <ReportField Name="StdCstVarAcctID_Account_description"></ReportField>
+        <ReportField Name="StdCstVarAcctID_description"></ReportField>
+        <ReportField Name="StdCstVarSubID_Sub_description"></ReportField>
+        <ReportField Name="StdCstVarSubID_description"></ReportField>
+        <ReportField Name="PPVAcctID_Account_description"></ReportField>
+        <ReportField Name="PPVAcctID_description"></ReportField>
+        <ReportField Name="PPVSubID_Sub_description"></ReportField>
+        <ReportField Name="PPVSubID_description"></ReportField>
+        <ReportField Name="FreightAcctID_Account_description"></ReportField>
+        <ReportField Name="FreightAcctID_description"></ReportField>
+        <ReportField Name="FreightSubID_Sub_description"></ReportField>
+        <ReportField Name="FreightSubID_description"></ReportField>
+        <ReportField Name="MiscAcctID_Account_description"></ReportField>
+        <ReportField Name="MiscAcctID_description"></ReportField>
+        <ReportField Name="MiscSubID_Sub_description"></ReportField>
+        <ReportField Name="MiscSubID_description"></ReportField>
+        <ReportField Name="POAccrualAcctID_Account_description"></ReportField>
+        <ReportField Name="POAccrualAcctID_description"></ReportField>
+        <ReportField Name="POAccrualSubID_Sub_description"></ReportField>
+        <ReportField Name="POAccrualSubID_description"></ReportField>
+        <ReportField Name="ReceiptLocationID_INLocation_descr"></ReportField>
+        <ReportField Name="ReceiptLocationID_description"></ReportField>
+        <ReportField Name="ShipLocationID_INLocation_descr"></ReportField>
+        <ReportField Name="ShipLocationID_description"></ReportField>
+        <ReportField Name="ReturnLocationID_INLocation_descr"></ReportField>
+        <ReportField Name="ReturnLocationID_description"></ReportField>
+        <ReportField Name="Secured">
+          <DataType>Boolean</DataType>
+        </ReportField>
+      </Fields>
+    </ReportTable>
+  </Tables>
+  <Sorting>
+    <SortExp>
+      <DataField>RowINTran.InventoryID</DataField>
+    </SortExp>
+    <SortExp>
+      <DataField>RowINTranSplit.LotSerialNbr</DataField>
+    </SortExp>
+    <SortExp>
+      <DataField>RowINTran.TranDate</DataField>
+    </SortExp>
+    <SortExp>
+      <DataField>RowINTran.RefNbr</DataField>
+    </SortExp>
+  </Sorting>
+  <SchemaUrl>http://px2/test/Api/servicedescription.aspx?WSDL</SchemaUrl>
+  <Relations>
+    <ReportRelation>
+      <ChildName>RowINTran</ChildName>
+      <ParentName>RowINTranSplit</ParentName>
+      <JoinType>Inner</JoinType>
+      <Links>
+        <RelationRow>
+          <ChildField>DocType</ChildField>
+          <ParentField>DocType</ParentField>
+        </RelationRow>
+        <RelationRow>
+          <ChildField>RefNbr</ChildField>
+          <ParentField>RefNbr</ParentField>
+        </RelationRow>
+        <RelationRow>
+          <ChildField>LineNbr</ChildField>
+          <ParentField>LineNbr</ParentField>
+        </RelationRow>
+      </Links>
+    </ReportRelation>
+    <ReportRelation>
+      <ChildName>RowINTranSplitCostDetail</ChildName>
+      <ParentName>RowINTranSplit</ParentName>
+      <Links>
+        <RelationRow>
+          <ChildField>DocType</ChildField>
+          <ParentField>DocType</ParentField>
+        </RelationRow>
+        <RelationRow>
+          <ChildField>TranType</ChildField>
+          <ParentField>TranType</ParentField>
+        </RelationRow>
+        <RelationRow>
+          <ChildField>RefNbr</ChildField>
+          <ParentField>RefNbr</ParentField>
+        </RelationRow>
+        <RelationRow>
+          <ChildField>LineNbr</ChildField>
+          <ParentField>LineNbr</ParentField>
+        </RelationRow>
+        <RelationRow>
+          <ChildField>SplitLineNbr</ChildField>
+          <ParentField>SplitLineNbr</ParentField>
+        </RelationRow>
+      </Links>
+    </ReportRelation>
+    <ReportRelation>
+      <ChildName>RowInventoryItem</ChildName>
+      <ParentName>RowINTran</ParentName>
+      <JoinType>Inner</JoinType>
+      <Links>
+        <RelationRow>
+          <ChildField>InventoryID</ChildField>
+          <ParentField>InventoryID</ParentField>
+        </RelationRow>
+      </Links>
+    </ReportRelation>
+    <ReportRelation>
+      <ChildName>RowINLotSerClass</ChildName>
+      <ParentName>RowInventoryItem</ParentName>
+      <JoinType>Inner</JoinType>
+      <Links>
+        <RelationRow>
+          <ChildField>LotSerClassID</ChildField>
+          <ParentField>LotSerClassID</ParentField>
+        </RelationRow>
+      </Links>
+    </ReportRelation>
+    <ReportRelation>
+      <ChildName>RowINSite</ChildName>
+      <ParentName>RowINTran</ParentName>
+      <JoinType>Inner</JoinType>
+      <Links>
+        <RelationRow>
+          <ChildField>SiteID</ChildField>
+          <ParentField>SiteID</ParentField>
+        </RelationRow>
+      </Links>
+    </ReportRelation>
+  </Relations>
+  <Parameters>
+    <ReportParameter>
+      <Name>StartPeriod</Name>
+      <ViewName>=Report.GetFieldSchema('RowGLHistory.FinPeriodID')</ViewName>
+      
+      <Prompt>Start Period</Prompt>
+      <DefaultValue>=Report.GetDefExt('RowBatch.TranPeriodID')</DefaultValue>
+    </ReportParameter>
+    <ReportParameter>
+      <Name>EndPeriod</Name>
+      <ViewName>=Report.GetFieldSchema('RowGLHistory.FinPeriodID')</ViewName>
+      
+      <Prompt>End Period</Prompt>
+      <DefaultValue>=Report.GetDefExt('RowBatch.TranPeriodID')</DefaultValue>
+    </ReportParameter>
+    <ReportParameter>
+      <Name>Inventory_ID</Name>
+      <Nullable>True</Nullable>
+      <ViewName>=Report.GetFieldSchema('INTran.InventoryID')</ViewName>
+      <Prompt>Inventory ID</Prompt>
+    </ReportParameter>
+    <ReportParameter>
+      <Name>SerialNbr</Name>
+      <Nullable>True</Nullable>
+      <Prompt>Serial Number</Prompt>
+    </ReportParameter>
+  </Parameters>
+	<StylesTemplate>TemplateReport.rpx</StylesTemplate>
+  <PageSettings>
+    <Landscape>True</Landscape>
+  </PageSettings>
+  <Sections>
+    <PageHeader Name="pageHeaderSection1">
+      <Height>1.16402cm</Height>
+      <Items>
+        <TextBox Name="textBox58">
+          <Location>868px, 29px</Location>
+          <StyleName>Heading 1</StyleName>
+          <Value>BasUoM</Value>
+          <Size>48px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox47">
+          <Location>768px, 29px</Location>
+          <StyleName>Heading 1</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>Qty</Value>
+          <Size>96px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox46">
+          <Location>916px, 29px</Location>
+          <StyleName>Heading 1</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>Estimated Cost</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox35">
+          <Location>668px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=Report.ExtToUI('RowBatch.TranPeriodID', @EndPeriod)</Value>
+          <Size>80px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox34">
+          <Location>588px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Left</TextAlign>
+          </Style>
+          <Value>End Period:</Value>
+          <Size>80px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox7">
+          <Location>312px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Left</TextAlign>
+          </Style>
+          <Value>Start Period:</Value>
+          <Size>96px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox5">
+          <Location>416px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=Report.ExtToUI('RowBatch.TranPeriodID', @StartPeriod)</Value>
+          <Size>80px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox9">
+          <Location>8px, 28px</Location>
+          <StyleName>Report Name</StyleName>
+          <Value>Lot / Serial History</Value>
+          <Size>206px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox11">
+          <Location>8px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>Company:</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox12">
+          <Location>90px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowCompanyBAccount.AcctName')</Value>
+          <Size>168px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox14">
+          <Location>892px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>Date:</Value>
+          <Size>36px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox15">
+          <Location>892px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>Page:</Value>
+          <Size>36px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox16">
+          <Location>8px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>User:</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox17">
+          <Location>928px, 0px</Location>
+          <StyleName>Report Params</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[PageOf]</Value>
+          <Size>84px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox18">
+          <Location>90px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Value>=Report.GetDefUI('RowAccessInfo.DisplayName')</Value>
+          <Size>168px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox19">
+          <Location>928px, 14px</Location>
+          <StyleName>Report Params</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=Today()</Value>
+          <Size>84px, 14px</Size>
+        </TextBox>
+        <Line Name="line1">
+          <Location>8px, 43px</Location>
+          <Size>1008px, 1px</Size>
+        </Line>
+      </Items>
+    </PageHeader>
+    <Detail Name="Details">
+      <Height>0.42328cm</Height>
+      <Variables>
+        <ReportVariable>
+          <Name>BegBalanceCost</Name>
+          <ValueExpr>=$BegBalanceCost+IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),[RowINTranSplit.InvtMult]*[RowINTranSplitCostDetail.BaseQty]*[RowINTranSplitCostDetail.TranCost]/[RowINTranSplitCostDetail.Qty],0)</ValueExpr>
+          <ResetGroup>group2</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>EndBalanceCost</Name>
+          <ValueExpr>=$EndBalanceCost+[RowINTranSplit.InvtMult]*[RowINTranSplitCostDetail.BaseQty]*[RowINTranSplitCostDetail.TranCost]/IIF([RowINTranSplitCostDetail.Qty]=0,1,[RowINTranSplitCostDetail.Qty])</ValueExpr>
+          <ResetGroup>group2</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>BegQty</Name>
+          <ValueExpr>=$BegQty+IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),[RowINTranSplit.InvtMult]*[RowINTranSplit.BaseQty],0)</ValueExpr>
+          <ResetGroup>group2</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>EndQty</Name>
+          <ValueExpr>=$EndQty+([RowINTranSplit.InvtMult]*[RowINTranSplit.BaseQty])</ValueExpr>
+          <ResetGroup>group2</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>VisibleCount</Name>
+          <ValueExpr>=$VisibleCount+IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),0,1)</ValueExpr>
+          <ResetGroup>group2</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>BegQtyItemTotal</Name>
+          <ValueExpr>=$BegQtyItemTotal+IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),[RowINTranSplit.InvtMult]*[RowINTranSplit.BaseQty],0)</ValueExpr>
+          <ResetGroup>group1</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>BegCostItemTotal</Name>
+          <ValueExpr>=$BegCostItemTotal+IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),[RowINTranSplit.InvtMult]*[RowINTranSplitCostDetail.BaseQty]*[RowINTranSplitCostDetail.TranCost]/IIF([RowINTranSplitCostDetail.Qty]=0,1,[RowINTranSplitCostDetail.Qty]),0)</ValueExpr>
+          <ResetGroup>group1</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>EndQtyItemTotal</Name>
+          <ValueExpr>=$EndQtyItemTotal+([RowINTranSplit.InvtMult]*[RowINTranSplit.BaseQty])</ValueExpr>
+          <ResetGroup>group1</ResetGroup>
+        </ReportVariable>
+        <ReportVariable>
+          <Name>EndCostItemTotal</Name>
+          <ValueExpr>=$EndCostItemTotal+[RowINTranSplit.InvtMult]*[RowINTranSplitCostDetail.BaseQty]*[RowINTranSplitCostDetail.TranCost]/IIF([RowINTranSplitCostDetail.Qty]=0,1,[RowINTranSplitCostDetail.Qty])</ValueExpr>
+          <ResetGroup>group1</ResetGroup>
+        </ReportVariable>
+      </Variables>
+      <VisibleExpr>=IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),False,True)</VisibleExpr>
+      <Items>
+        <TextBox Name="textBox55">
+          <Location>868px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowInventoryItem.BaseUnit]</Value>
+          <Size>44px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox56">
+          <Location>4px, 0px</Location>
+          <Visible>False</Visible>
+          <StyleName>Normal</StyleName>
+          <Value>=Assign('$index',$index+IIF(Report.ExtToInt('RowINTran.FinPeriodID',[RowINTran.FinPeriodID])&lt;Report.ExtToInt('RowGLHistory.FinPeriodID',[@StartPeriod]),0,1))</Value>
+          <Size>16px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox36">
+          <Location>788px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=[RowINTranSplit.BaseQty]</Value>
+          <Size>76px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox33">
+          <Location>600px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.ToLocationID]</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox28">
+          <Location>288px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.SiteID]</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox27">
+          <Location>200px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.TranDate]</Value>
+          <Size>84px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox25">
+          <Location>496px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.LocationID]</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox8">
+          <Location>24px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTranSplit.SubItemID]</Value>
+          <Size>84px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox6">
+          <Location>704px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.RefNbr]</Value>
+          <Size>80px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox29">
+          <Location>392px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.ToSiteID]</Value>
+          <Size>100px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox24">
+          <Location>112px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Value>=[RowINTran.TranType]</Value>
+          <Size>84px, 14px</Size>
+        </TextBox>
+        <TextBox Name="textBox23">
+          <Location>920px, 0px</Location>
+          <StyleName>Normal</StyleName>
+          <Style>
+            <TextAlign>Right</TextAlign>
+          </Style>
+          <Value>=Report.IntToUI('RowINTran.TranCost',[RowINTranSplitCostDetail.BaseQty]*[RowINTranSplitCostDetail.TranCost]/[RowINTranSplitCostDetail.Qty])</Value>
+          <Size>96px, 14px</Size>
+        </TextBox>
+      </Items>
+    </Detail>
+    <PageFooter Name="pageFooterSection1">
+      <Height>0.21164cm</Height>
+      <Visible>False</Visible>
+    </PageFooter>
+  </Sections>
+  <Groups>
+    <Group Name="group1">
+      <Grouping>
+        <GroupExp>
+          <DataField>RowINTran.InventoryID</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection1">
+          <Height>0.42328cm</Height>
+          <ProcessOrder>Always</ProcessOrder>
+          <Items>
+            <TextBox Name="textBox60">
+              <Location>868px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowInventoryItem.BaseUnit]</Value>
+              <Size>44px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox57">
+              <Location>636px, 0px</Location>
+              <Visible>False</Visible>
+              <StyleName>Normal</StyleName>
+              <Value>=Assign('$index',0)</Value>
+              <Size>12px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox50">
+              <Location>648px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Inventory Begin:</Value>
+              <Size>116px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox49">
+              <ProcessOrder>WhilePrint</ProcessOrder>
+              <Location>768px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=$BegQtyItemTotal</Value>
+              <Format>=[RowINTran.Qty.Format]</Format>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox48">
+              <ProcessOrder>WhilePrint</ProcessOrder>
+              <Location>920px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=$BegCostItemTotal</Value>
+              <Format>=[RowINTran.TranCost.Format]</Format>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <Line Name="line4">
+              <Location>8px, 14px</Location>
+              <LineStyle>Dashed</LineStyle>
+              <Size>1008px, 1px</Size>
+            </Line>
+            <TextBox Name="textBox41">
+              <Location>360px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowInventoryItem.Descr]</Value>
+              <Size>276px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox40">
+              <Location>268px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Description:</Value>
+              <Size>88px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox1">
+              <Location>8px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Inventory ID:</Value>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox2">
+              <Location>108px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowINTranSplit.InventoryID]</Value>
+              <Size>148px, 14px</Size>
+            </TextBox>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection1">
+          <Height>0.42328cm</Height>
+          <VisibleExpr>=$index&gt;0</VisibleExpr>
+          <Items>
+            <TextBox Name="textBox62">
+              <Location>868px, 1px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowInventoryItem.BaseUnit]</Value>
+              <Size>44px, 14px</Size>
+            </TextBox>
+            <Line Name="line5">
+              <Location>648px, 0px</Location>
+              <Size>368px, 1px</Size>
+            </Line>
+            <TextBox Name="textBox53">
+              <Location>648px, 1px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Inventory End:</Value>
+              <Size>116px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox52">
+              <Location>768px, 1px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=Report.IntToUI('RowINTran.Qty',$EndQtyItemTotal)</Value>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox51">
+              <Location>920px, 1px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=Report.IntToUI('RowINTran.TranCost',$EndCostItemTotal)</Value>
+              <Size>96px, 14px</Size>
+            </TextBox>
+          </Items>
+        </Footer>
+      </Footers>
+    </Group>
+    <Group Name="group2">
+      <Grouping>
+        <GroupExp>
+          <DataField>RowINTranSplit.LotSerialNbr</DataField>
+        </GroupExp>
+      </Grouping>
+      <Headers>
+        <Header Name="groupHeaderSection2">
+          <Height>0.42328cm</Height>
+          <ProcessOrder>Always</ProcessOrder>
+          <Items>
+            <TextBox Name="textBox59">
+              <Location>868px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowInventoryItem.BaseUnit]</Value>
+              <Size>44px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox20">
+              <Location>712px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Begin:</Value>
+              <Size>52px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox22">
+              <Location>16px, 0px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>Lot/Serial N:</Value>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox44">
+              <Location>116px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowINTranSplit.LotSerialNbr]</Value>
+              <Size>236px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox42">
+              <ProcessOrder>WhilePrint</ProcessOrder>
+              <Location>768px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=$BegQty</Value>
+              <Format>=[RowINTran.Qty.Format]</Format>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox38">
+              <ProcessOrder>WhilePrint</ProcessOrder>
+              <Location>920px, 0px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=$BegBalanceCost</Value>
+              <Format>=[RowINTran.TranCost.Format]</Format>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <Line Name="line2">
+              <VisibleExpr>=$VisibleCount&gt;0</VisibleExpr>
+              <Location>712px, 14px</Location>
+              <ProcessOrder>WhilePrint</ProcessOrder>
+              <Size>304px, 1px</Size>
+            </Line>
+          </Items>
+        </Header>
+        <Header Name="groupHeaderSection3">
+          <Height>0.42328cm</Height>
+          <ProcessOrder>WhilePrint</ProcessOrder>
+          <DrawGrid>True</DrawGrid>
+          <VisibleExpr>=$VisibleCount&gt;0</VisibleExpr>
+          <GridSize>8px, 8px</GridSize>
+          <Items>
+            <Panel Name="panel1">
+              <Location>24px, 0px</Location>
+              <GridSize>4px, 4px</GridSize>
+              <Style>
+                <BorderColor>
+                  <Top>Black</Top>
+                  <Bottom>Black</Bottom>
+                </BorderColor>
+                <BorderStyle>
+                  <Bottom>Solid</Bottom>
+                </BorderStyle>
+                <BorderWidth>
+                  <Top>1px</Top>
+                  <Bottom>1px</Bottom>
+                </BorderWidth>
+              </Style>
+              <Size>992px, 15px</Size>
+              <DrawGrid>False</DrawGrid>
+              <Items>
+                <TextBox Name="textBox54">
+                  <Location>844px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>UoM</Value>
+                  <Size>44px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox37">
+                  <Location>764px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                  <Value>Qty</Value>
+                  <Size>76px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox32">
+                  <Location>576px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>To Loc. ID</Value>
+                  <Size>100px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox26">
+                  <Location>264px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>Whs. ID</Value>
+                  <Size>100px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox3">
+                  <Location>176px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>Tran. Date</Value>
+                  <Size>84px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox10">
+                  <Location>472px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>Location ID</Value>
+                  <Size>100px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox4">
+                  <Location>368px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>To Whs. ID</Value>
+                  <Size>100px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox13">
+                  <Location>680px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>Ref. Nbr.</Value>
+                  <Size>80px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox21">
+                  <Location>0px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>Subitem</Value>
+                  <Size>84px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox30">
+                  <Location>892px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                  <Value>Estimated Cost</Value>
+                  <Size>100px, 14px</Size>
+                </TextBox>
+                <TextBox Name="textBox31">
+                  <Location>88px, 0px</Location>
+                  <StyleName>Heading 1</StyleName>
+                  <Value>Tran. Type</Value>
+                  <Size>84px, 14px</Size>
+                </TextBox>
+              </Items>
+            </Panel>
+          </Items>
+        </Header>
+      </Headers>
+      <Footers>
+        <Footer Name="groupFooterSection2">
+          <Height>0.42328cm</Height>
+          <VisibleExpr>=$VisibleCount&gt;0</VisibleExpr>
+          <Items>
+            <TextBox Name="textBox61">
+              <Location>868px, 1px</Location>
+              <StyleName>Normal</StyleName>
+              <Value>=[RowInventoryItem.BaseUnit]</Value>
+              <Size>44px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox45">
+              <Location>712px, 1px</Location>
+              <StyleName>Heading 1</StyleName>
+              <Value>End:</Value>
+              <Size>52px, 14px</Size>
+            </TextBox>
+            <TextBox Name="textBox43">
+              <Location>768px, 1px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=$EndQty</Value>
+              <Format>=[RowINTran.Qty.Format]</Format>
+              <Size>96px, 14px</Size>
+            </TextBox>
+            <Line Name="line3">
+              <Location>712px, 0px</Location>
+              <Size>304px, 1px</Size>
+            </Line>
+            <TextBox Name="textBox39">
+              <Location>920px, 1px</Location>
+              <StyleName>Normal</StyleName>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+              <Value>=$EndBalanceCost</Value>
+              <Format>=[RowINTran.TranCost.Format]</Format>
+              <Size>96px, 14px</Size>
+            </TextBox>
+          </Items>
+        </Footer>
+      </Footers>
+    </Group>
+  </Groups>
+</Report>
